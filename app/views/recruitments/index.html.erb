@@ -1,0 +1,64 @@
+<h1>Recruitments#index</h1>
+
+<form method="get" id="firstForm">
+  <p>
+    <label><input type="radio" id="question1" name="question" value="1" >兵器を揃える</label>
+    <label><input type="radio" id="question2" name="question" value="2" >自軍3000人のモチベーションを上げる</label>
+    <label><input type="radio" id="question3" name="question" value="3" >土地を活かした戦略を練る</label>
+    <label><input type="radio" id="question4" name="question" value="4" >逃げる</label>
+  </p>
+  <button type="button" id="questionButton">次へ</button>
+</form>
+
+<%# ここは普段はdisplay="none" %>
+<form action="show/" method="get" id="form1">
+  <p>
+    <label><input type="radio" id="answer1" name="answer" data-action="show/1">ミサイル</label>
+    <label><input type="radio" id="answer2" name="answer" data-action="show/2">細菌兵器</label>
+    <label><input type="radio" id="answer3" name="answer" data-action="show/3">何が使えそうか勉強</label>
+    <label><input type="radio" id="answer4" name="answer" data-action="show/4">竹槍みたいな入手し易い武器</label>
+  </p>
+  <p>
+    <input type="submit" value="診断する" id="submit1">
+  </p>
+</form>
+
+<%# ここは普段はdisplay="none" %>
+<form action="show/" method="get" id="form2">
+  <p>
+    <label><input type="radio" id="answer5" name="answer" data-action="show/5">食事を与える</label>
+    <label><input type="radio" id="answer6" name="answer" data-action="show/6">遺書を書かせて腹を括らせる</label>
+    <label><input type="radio" id="answer7" name="answer" data-action="show/7">成果報酬を共有する</label>
+    <label><input type="radio" id="answer8" name="answer" data-action="show/8">自ら先人を切って引っ張る</label>
+  </p>
+  <p>
+    <input type="submit" value="診断する" id="submit2">
+  </p>
+</form>
+
+<%# ここは普段はdisplay="none" %>
+<%# ここにテキスト入力で回答してもらい、入力された回答を表示する。 %>
+<%# 回答にまでかかった時間を表示する。DBは使わず全部JSでやる。 %>
+<div id="form3">
+  <label>どのように土地を活かす？</label>
+  <p>
+    <input type="text" id="form3input" placeholder="回答を入力してください"> 
+  </p>
+  <p>
+    <input type="button" value="診断する" id="form3submit">
+  </p>
+</div>
+
+<%# ここは普段はdisplay="none" %>
+<div id="form3_answer">
+  <label>あなたの回答:</label>
+  <label id="answerText"></label>
+    <label>回答にまでかかった時間は</label>
+    <label id="answerTime"></label>
+    <label>秒</label>
+</div>
+
+<%# ここは普段はdisplay="none" %>
+<div id="form4">
+  <p>追加質問なし。ありがとうございました。</p>
+</div>

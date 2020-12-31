@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>Nishi</title>
+
+    <script src="https://js.pay.jp/" type="text/javascript"></script>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +13,13 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p><%= flash[:alert] %></p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
