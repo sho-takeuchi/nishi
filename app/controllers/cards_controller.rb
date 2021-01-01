@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  before_action :move_to_signed_in
 
   require 'payjp'
 
@@ -29,4 +30,12 @@ class CardsController < ApplicationController
     Payjp.api_key = Rails.application.credentials[:payjp][:PAYJP_PRIVATE_KEY]
   end
   
+  private
+  def move_to_signed_in
+    unless user_signed_in?
+      #サインインしていないユーザーはログインページが表示される
+      redirect_to  '/users/sign_in'
+    end
+  end
+
 end

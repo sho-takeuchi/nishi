@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2020_12_31_141529) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "subscription_id"
+    t.boolean "premium", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
