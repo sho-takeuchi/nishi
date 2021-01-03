@@ -1,11 +1,16 @@
 class RecruitmentsController < ApplicationController
   before_action :move_to_signed_in
-  
+  before_action :move_to_card_registration
+
   def index
     
   end
 
-private
+  def show
+    @recruitments = Recruitment.find(params[:id])
+  end
+
+  private
   def move_to_signed_in
     unless user_signed_in?
       #サインインしていないユーザーはログインページが表示される
@@ -13,7 +18,13 @@ private
     end
   end
 
-  def show
-    @recruitments = Recruitment.find(params[:id])
+  def move_to_card_registration
+    card = Card.where(user_id: current_user.id).first
+    if card.blank?
+      flash[:notice] = 'サービスの利用にはカード登録と定期課金決済をお願いします。'
+      redirect_to controller: "cards", action: "new"
+    end
   end
+
+
 end

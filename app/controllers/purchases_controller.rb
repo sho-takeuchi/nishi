@@ -37,6 +37,14 @@ class PurchasesController < ApplicationController
     redirect_to action: 'done'
   end
 
+  def cancel
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+    subscription = Payjp::Subscription.retrieve(current_user.subscription_id)
+    subscription.cancel
+    current_user.update(premium: false)
+    redirect_to action: 'canceled' 
+  end
+
   private
   def move_to_signed_in
     unless user_signed_in?

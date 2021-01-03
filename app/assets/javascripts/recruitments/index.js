@@ -68,7 +68,7 @@ $(function(){
       const endTime = Date.now(); // 回答終了時間
       let time = endTime - startTime;
       let time2 = time/1000;
-      let time3 = Math.round(time2 * 10) / 10　//小数点第二位以下は切り捨て
+      let time3 = Math.round(time2 * 10) / 10 //小数点第二位以下は切り捨て
       $("#form3").hide();
       $("#form3_answer").fadeIn();
       let form3inputVal = $("#form3input").val();

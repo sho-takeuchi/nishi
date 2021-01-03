@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   
   get 'purchases/index'
   get 'purchases/done'
+  post 'purchases/cancel'
+  get 'purchases/canceled'
 
   post 'purchases/pay'
   
