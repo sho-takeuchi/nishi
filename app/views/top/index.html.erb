@@ -1,5 +1,18 @@
 <h1>Top#index</h1>
 
-<strong><%= link_to "カード新規登録", new_card_path %></strong>
-<strong><%= link_to "サブスク登録", purchases_index_path %></strong>
+<% if user_signed_in? %>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "ログイン", new_user_session_path %>
+<% end %>
+
+<% if @user.premium == false %>
+  <strong><%= link_to "サブスク登録へ", new_card_path %></strong>  
+<% end %>
+
+
+
+
+<strong><%= link_to "マイページへ", top_mypage_path %></strong>
+
 <strong><%= link_to "診断へ", recruitments_index_path %></strong>

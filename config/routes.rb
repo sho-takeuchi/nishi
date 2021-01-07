@@ -3,12 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   
   get 'purchases/index'
-  get 'purchases/done'
-  post 'purchases/cancel'
-  get 'purchases/canceled'
 
-  post 'purchases/pay'
-  
+  post 'top/cancel'
+  post "top/index"
+  get  "top/mypage"
+
   get  "recruitments/index"  => "recruitments#index"
   get 'recruitments/show/:id' => 'recruitments#show',as:'recruitments_show'
 

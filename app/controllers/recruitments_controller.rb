@@ -14,6 +14,7 @@ class RecruitmentsController < ApplicationController
   def move_to_signed_in
     unless user_signed_in?
       #サインインしていないユーザーはログインページが表示される
+      flash[:notice] = 'サービスの利用には会員登録が必要です。'
       redirect_to  '/users/sign_in'
     end
   end

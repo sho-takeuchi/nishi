@@ -8,5 +8,5 @@
   <p>セキュリティコード</p>
   <%= f.password_field :cvc, id: 'cvc',class: "card_form" ,maxlength: '6',autocomplete: "on" %>
   <div class="card-btn" id="card_token"></div>
-  <%= f.submit '登録', id: 'token_submit',class: 'card-btn' %>
+  <%= f.submit 'サブスク決済をする', id: 'token_submit',class: 'card-btn' %>
 <% end %>

@@ -5,6 +5,15 @@ class CardsController < ApplicationController
 
   before_action :set_api_key
 
+  def plan #定期課金プラン
+    Payjp::Plan.create(
+      :amount => 1000,
+      :interval => 'month',
+      :billing_day => 27,
+      :currency => 'jpy',
+    )
+  end
+
   def create
     if params['payjp-token'].blank?
       redirect_to action: "new"
@@ -17,13 +26,34 @@ class CardsController < ApplicationController
       ) 
       @card = Card.new(user_id: user_id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        flash[:notice] = '登録しました'
-        redirect_to "/"
+        pay
       else
         flash[:alert] = '登録できませんでした'
         redirect_to action: "new"
       end
     end
+  end
+
+  def pay
+    card = Card.where(user_id: current_user.id).first
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+    subscription = Payjp::Subscription.create(
+    :customer => card.customer_id, 
+    :plan => plan,
+    metadata: {user_id: current_user.id}
+    )
+    current_user.update(subscription_id: subscription.id, premium: true)
+    flash[:alert] = '定期課金に登録できました'
+    redirect_to "/"
+  end
+
+  def cancel
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+    subscription = Payjp::Subscription.retrieve(current_user.subscription_id)
+    subscription.cancel
+    current_user.update(premium: false)
+    flash[:alert] = '定期課金を解除できました'
+    redirect_to "/" 
   end
 
   def set_api_key

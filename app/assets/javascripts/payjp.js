@@ -24,6 +24,12 @@ document.addEventListener(
               $('<input type="hidden" name="payjp-token">').val(response.id)
               // <input type="hidden" name="payjp-token" value= response.id>が#card_tokenに追加される。
             ); 
+            if(!confirm('この内容でよろしかったですか？')){
+                /*　キャンセルの時の処理 */
+                return false;
+            }else{
+                /*　OKの時の処理  今回は特に処理がないので空*/
+            }
             document.inputForm.submit(); // inputFormのsubmitを発動。（上記で停止していた）
             alert("登録が完了しました"); 
           } else {
