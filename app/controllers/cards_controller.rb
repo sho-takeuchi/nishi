@@ -14,7 +14,7 @@ class CardsController < ApplicationController
     )
   end
 
-  def create
+  def create #カード登録メソッド
     if params['payjp-token'].blank?
       redirect_to action: "new"
       # トークンが取得出来てなければループ
@@ -26,7 +26,7 @@ class CardsController < ApplicationController
       ) 
       @card = Card.new(user_id: user_id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        pay
+        pay #カード情報を保存できたらpayアクションを呼び出す。
       else
         flash[:alert] = '登録できませんでした'
         redirect_to action: "new"
@@ -37,12 +37,13 @@ class CardsController < ApplicationController
   def pay
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
-    subscription = Payjp::Subscription.create(
+    subscription = Payjp::Subscription.create( #サブスク情報を作成して変数subscriptionに代入
     :customer => card.customer_id, 
-    :plan => plan,
+    :plan => plan, #plamアクションで定義した情報を呼び出す
     metadata: {user_id: current_user.id}
     )
     current_user.update(subscription_id: subscription.id, premium: true)
+    #subscription_idを持たせ、premiumカラムをtrueにして、user情報をアップデート
     flash[:alert] = '定期課金に登録できました'
     redirect_to "/"
   end
@@ -51,7 +52,7 @@ class CardsController < ApplicationController
     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
     subscription = Payjp::Subscription.retrieve(current_user.subscription_id)
     subscription.cancel
-    current_user.update(premium: false)
+    current_user.update(premium: false) #キャンセルしたユーザーは、premiumカラムをfalseにする
     flash[:alert] = '定期課金を解除できました'
     redirect_to "/" 
   end

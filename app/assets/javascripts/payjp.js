@@ -1,5 +1,5 @@
 document.addEventListener(
-  "DOMContentLoaded", e => {
+  "turbolinks:load", e => {
     if (document.getElementById("token_submit") != null) {
       // "token_submit"というidをもつhtmlがあるページか？つまりカード作成ページか
       Payjp.setPublicKey("pk_test_bf8f6b07458f0197ea990312"); 

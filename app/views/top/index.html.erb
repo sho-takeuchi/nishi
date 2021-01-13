@@ -2,17 +2,16 @@
 
 <% if user_signed_in? %>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  <strong><%= link_to "マイページへ", top_mypage_path %></strong>
 <% else %>
+  <%= link_to "新規登録", new_user_registration_path %>
   <%= link_to "ログイン", new_user_session_path %>
 <% end %>
 
-<% if @user.premium == false %>
-  <strong><%= link_to "サブスク登録へ", new_card_path %></strong>  
+<% if user_signed_in? %>
+  <% if @user.premium == false %>
+    <strong><%= link_to "サブスク登録へ", new_card_path %></strong>  
+  <% end %>
 <% end %>
-
-
-
-
-<strong><%= link_to "マイページへ", top_mypage_path %></strong>
 
 <strong><%= link_to "診断へ", recruitments_index_path %></strong>

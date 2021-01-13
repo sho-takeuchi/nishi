@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   root "top#index"
   devise_for :users
-  
-  get 'purchases/index'
 
   post 'top/cancel'
   post "top/index"

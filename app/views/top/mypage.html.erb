@@ -2,20 +2,24 @@
 
 <p>あなたのemailは、<%= @email_addres %>です</p>
 
-<p> <%= @card %> </p>
 
-<p>カード番号</p>
-<%= "**** **** **** " + @default_card_information.last4 %>
-<br>
-<p>年月日</p>
-<% exp_month = @default_card_information.exp_month.to_s %>
-<% exp_year = @default_card_information.exp_year.to_s.slice(2,3) %>
-<%= exp_month + " / " + exp_year %>
+<% if !@card.nil? %>
+  <strong>カード情報</strong>
+  <p>カード番号</p>
+  <%= "**** **** **** " + @default_card_information.last4 %>
+  <br>
+  <p>年月日</p>
+  <% exp_month = @default_card_information.exp_month.to_s %>
+  <% exp_year = @default_card_information.exp_year.to_s.slice(2,3) %>
+  <%= exp_month + " / " + exp_year %>
 
-<% if @user.premium == true %>
-  <%= form_tag(action: :cancel, method: :post) do %>
-    <button>サブスクを解約する</button>
+  <% if @user.premium == true %>
+    <%= form_tag(action: :cancel, method: :post) do %>
+      <button>サブスクを解約する</button>
+    <% end %>
+  <% else %>
+    <p>サブスク会員ではありません。サービスの利用にはサブスク会員の登録が必要です。</p>
   <% end %>
 <% else %>
-  <p>サブスク会員ではありません。サービスの利用にはサブスク会員の登録が必要です。</p>
+  カード情報がありません。カード情報の入力とサブスク決済の手続きを完了してください。
 <% end %>

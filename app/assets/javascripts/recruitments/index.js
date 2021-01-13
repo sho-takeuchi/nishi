@@ -1,4 +1,4 @@
-$(function(){
+$(document).on("ready turbolinks:load", function() {
   $("#questionButton").on("click" ,function(){
     let question1Prop = $("#question1").prop("checked");
     let question2Prop = $("#question2").prop("checked");
@@ -76,6 +76,4 @@ $(function(){
       $("#answerTime").text(time3); //回答時間を貼り付け
     });
   });
-
-
 });
