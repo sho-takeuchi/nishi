@@ -8,9 +8,16 @@
   <%= link_to "ログイン", new_user_session_path %>
 <% end %>
 
+
+<%# 3パターン用意する。①そもそも会員ではないもしくは、ログインしてない ②ユーザーがサインインしてるが、カード情報がなくプレミアム会員ではない 
+③ユーザーがサインインしててカード情報はあるけど、プレミアム会員ではない（定期課金を解約したユーザー） %>
 <% if user_signed_in? %>
-  <% if @user.premium == false %>
-    <strong><%= link_to "サブスク登録へ", new_card_path %></strong>  
+  <% if @card.nil? %>
+    <strong><%= link_to "サブスク登録へ", new_card_path %></strong>
+  <% elsif @user.premium == false then %>
+    <%= form_tag(action: :resume, method: :post) do %>
+      <button>サブスクを再開する</button>
+    <% end %>
   <% end %>
 <% end %>
 

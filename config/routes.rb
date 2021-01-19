@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   post 'top/cancel'
+  post 'top/resume'
   post "top/index"
   get  "top/mypage"
 

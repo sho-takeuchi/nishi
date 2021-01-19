@@ -3,9 +3,14 @@ class TopController < ApplicationController
   before_action :move_to_signed_in, except: [:index]
   
   def index
-    if User.exists?
+    if User.exists? #ユーザーが誰もいない状態では、エラーが起こるため
       if user_signed_in?
           @user = User.where(id: current_user.id).first
+      end
+    end
+    if @card.nil?
+      if user_signed_in?
+        @card = Card.where(user_id: current_user.id).first
       end
     end
   end
@@ -28,6 +33,14 @@ class TopController < ApplicationController
     subscription = Payjp::Subscription.retrieve(current_user.subscription_id)
     subscription.cancel
     current_user.update(premium: false)
+    redirect_to "/"
+  end
+
+  def resume
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+    subscription = Payjp::Subscription.retrieve(current_user.subscription_id)
+    subscription.resume
+    current_user.update(premium: true)
     redirect_to "/"
   end
 

@@ -20,10 +20,17 @@ class RecruitmentsController < ApplicationController
   end
 
   def move_to_card_registration
+    #①サインインしてるが、カード情報がない場合
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       flash[:notice] = 'サービスの利用にはカード登録と定期課金決済をお願いします。'
       redirect_to controller: "cards", action: "new"
+      return
+    end
+    user = User.where(id: current_user.id).first
+    unless user.premium?
+      flash[:notice] = 'サービスの利用には定期課金決済が必要です。サブスクを再開してください。'
+      redirect_to "/"
     end
   end
 
