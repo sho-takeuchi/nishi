@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post 'top/resume'
   post "top/index"
   get  "top/mypage"
+  # post "top/mypage"
 
   get  "recruitments/index"  => "recruitments#index"
   get 'recruitments/show/:id' => 'recruitments#show',as:'recruitments_show'
