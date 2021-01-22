@@ -1,3 +1,255 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+<<<<<<< Updated upstream
+=======
+
+h1,h2,h3,h4,h5,h6 {
+  line-height: 1.57;
+  letter-spacing: 0.15em;
+  font-size: 16px;
+  color: #000000;
+  font-family: "ヒラギノ角ゴ Pro W6";
+  margin: 0;
+}
+
+p {
+  line-height: 1.57;
+  letter-spacing: 0.15em;
+  font-size: 8px;
+  color: #000000;
+  font-family: "ヒラギノ角ゴ Pro W8";
+  margin: 0;
+  }
+
+h1 {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;/*rem算出をしやすくするために*/
+}
+
+header {
+  background-color: #26d0c9;
+  height: 75px;
+}
+
+.header-logo {
+  float: left;
+  padding:20px 40px;
+  font-size: 24px;
+  color: #ffffff;
+  font-family: "ヒラギノ角ゴ Pro W8";
+  font-weight: bold;
+}
+
+
+.wrapper {
+  background-color: #cbf2ee;
+}
+
+.contents {
+  height: 150px;
+}
+
+.content-btn {
+  margin: 50px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+// -------------- ボタン ----------------
+.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  appearance: none;
+  height: 100px;
+  width: 150px;
+  font-size: 16px;
+  text-align:center;
+  font-family: "ヒラギノ角ゴ Pro W6";
+  margin:0px 5px 10px 5px;
+}
+
+.btn-color1 {
+  color: #FFFFFF;
+  background-color: #fc87c5;
+  border-bottom: 5px solid #f941a3;
+  transition: 0.3s;
+  padding: 35px 0px 0px 0px;
+}
+
+.btn-color1:hover {
+  margin-top: 2px;
+  color: #FFFFFF;
+  background-color: #fc87c5;
+  border-bottom: 2px solid #fe4aaa;
+}
+
+.btn-color2 {
+  color: #FFFFFF;
+  background-color: #e9c904;
+  border-bottom: 5px solid #bfa70d;
+  transition: 0.3s;
+  padding: 35px 0px 0px 0px;
+}
+
+.btn-color2:hover {
+  margin-top: 2px;
+  color: #FFFFFF;
+  background-color: #e9c904;
+  border-bottom: 2px solid #bfa70d;
+}
+
+.btn-color3 {
+  color: #FFFFFF;
+  background-color: #b2e85c;
+  border-bottom: 5px solid #8fc33a;
+  transition: 0.3s;
+  padding: 35px 0px 0px 0px;
+}
+
+.btn-color3:hover {
+  margin-top: 2px;
+  color: #FFFFFF;
+  background-color: #b2e85c;
+  border-bottom: 2px solid #8fc33a;
+}
+
+.btn-color4 {
+  color: #FFFFFF;
+  background-color: #47eacf;
+  border-bottom: 5px solid #1ecfb1;
+  transition: 0.3s;
+  padding: 35px 0px 0px 0px;
+}
+
+.btn-color4:hover {
+  margin-top: 2px;
+  color: #FFFFFF;
+  background-color: #47eacf;
+  border-bottom: 2px solid #1ecfb1;
+}
+
+// ----------- お問い合わせ ---------------
+.content-contact {
+  float:right;
+  padding:10px 40px;
+}
+
+.contact-btn {
+  font-size: 1.0rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  width: 90px;
+  height: 90px;
+  padding: 20px 0 0;
+  border-radius: 50%;
+  color: #fff;
+  background: #eb6877;
+  -webkit-box-shadow: 0 7px 0 #e53b4e;
+  box-shadow: 0 7px 0 #e53b4e;
+}
+
+.contact-btn:hover {
+  -webkit-transform: translate(0, 4px);
+  transform: translate(0, 4px);
+  color: #fff;
+  -webkit-box-shadow: 0 3px 0 #e53b4e;
+  box-shadow: 0 3px 0 #e53b4e;
+}
+
+.content-privacy {
+  width: 600px;
+  height: 300px;
+  margin: 0px auto 40px auto;
+  background-color: #ffffff;
+  border: 1px #c0c0c0 solid;
+  color: #000000;
+  overflow-x: auto;
+  white-space: nowrap;
+  overflow-y: auto;
+}
+
+footer {
+  height: 100px;
+  background-color: #6b7a8f;
+  text-align: center;
+}
+
+@media (max-width: 655px) {
+  .content-privacy {
+    width: 500px;
+    height: 300px;
+    margin: 70px auto 40px auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .header-logo {
+    padding:20px 20px;
+    font-size: 24px;
+  }
+
+  .content-contact {
+    padding:10px 20px;
+  }
+
+  .content-btn {
+    margin: 50px 0px;
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    width: 400px;
+    margin:0px auto 10px auto;
+  }
+
+  .content-privacy {
+    width: 400px;
+    height: 300px;
+    margin: 330px auto 40px auto;
+  }
+}
+>>>>>>> Stashed changes
