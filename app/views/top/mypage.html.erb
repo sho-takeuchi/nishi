@@ -15,7 +15,7 @@
 
   <% if @user.premium == true %>
     <%= form_tag(action: :cancel, method: :post) do %>
-      <button>サブスクを解約する</button>
+      <button id="subscript_cancell">サブスクを解約する</button>
     <% end %>
   <% else %>
     <p>サブスク会員ではありません。</p>
@@ -27,3 +27,11 @@
 <% else %>
   カード情報がありません。カード情報の入力とサブスク決済の手続きを完了してください。
 <% end %>
+
+<script>
+  $(document).on("ready turbolinks:load", function() {
+    $("#subscript_cancell").on("click" ,function(){
+      alert('本当に解約しますか？');
+    });
+  });
+</script>
