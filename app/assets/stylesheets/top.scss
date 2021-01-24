@@ -56,6 +56,7 @@ header {
   color: #ffffff;
   font-family: "ヒラギノ角ゴ Pro W8";
   font-weight: bold;
+  text-decoration: none;
 }
 
 
@@ -160,6 +161,78 @@ header {
   color: #FFFFFF;
   background-color: #47eacf;
   border-bottom: 2px solid #1ecfb1;
+}
+
+.btn-color5 {
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  height: 50px;
+  width: 150px;
+  color: #fff;
+  background: #eb6877;
+  -webkit-box-shadow: 0 7px 0 #e53b4e;
+  box-shadow: 0 7px 0 #e53b4e;
+  font-family: "ヒラギノ角ゴ Pro W6";
+  transition: 0.3s;
+  outline: none;
+  border: none;
+  letter-spacing: 0.1em;
+  border-radius: 0.5rem;
+  font-size: 16px;
+  text-align: center;
+  margin:10px 0px 10px 0px;
+}
+
+.btn-color5:hover {
+  -webkit-transform: translate(0, 4px);
+  transform: translate(0, 4px);
+  color: #fff;
+  -webkit-box-shadow: 0 3px 0 #e53b4e;
+  box-shadow: 0 3px 0 #e53b4e;
+}
+
+.btn-color6 {
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  height: 50px;
+  width: 150px;
+  color: #fff;
+  background: #eb6877;
+  -webkit-box-shadow: 0 7px 0 #e53b4e;
+  box-shadow: 0 7px 0 #e53b4e;
+  font-family: "ヒラギノ角ゴ Pro W6";
+  transition: 0.3s;
+  outline: none;
+  border: none;
+  letter-spacing: 0.1em;
+  border-radius: 0.5rem;
+  font-size: 16px;
+  text-align: center;
+  margin:30px 0px 20px 0px;
+}
+
+.btn-color6:hover {
+  -webkit-transform: translate(0, 4px);
+  transform: translate(0, 4px);
+  color: #fff;
+  -webkit-box-shadow: 0 3px 0 #e53b4e;
+  box-shadow: 0 3px 0 #e53b4e;
 }
 
 // ----------- お問い合わせ ---------------
