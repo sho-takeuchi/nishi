@@ -1,0 +1,47 @@
+.forgotpass {
+  width: 500px;
+  height: 470px;
+  margin: 60px auto 60px auto;
+  text-align: center; 
+  background-color: #ffffff;
+}
+
+.forgotpass-title{
+  font-size: 24px;
+  color: #000000;
+  font-family: "ヒラギノ角ゴ Pro W8";
+  font-weight: bold;
+  padding:30px 0px 10px 0px;
+  margin:10px 0px 20px 0px;
+}
+
+.signup_login-path p {
+  text-align: center;
+  font-size: 12px;
+  color: #767676;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.signup_login-path p span {
+  text-decoration: line-through;
+  text-decoration-color: #e7e7e7;
+}
+
+.signup_login-path a {
+  margin: 30px auto 10px auto;
+  display: block;
+  width: 150px;
+  height: 31px;
+  font-size: 13px;
+  color: #111;
+  line-height: 31px;
+  text-align: center;
+  background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+  border-radius: 3px;
+  border: 1px #a2a6ac solid;
+}
+
+.signup_login-path a:hover {
+  background: #e7e9ec;
+}

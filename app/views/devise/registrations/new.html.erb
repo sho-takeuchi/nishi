@@ -1,29 +1,59 @@
-<h2>Sign up</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>西澤式適性診断アプリ</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+  </head>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <%= link_to '西澤式適性診断アプリ', root_path, class: "header-logo" %>
+        <div class="content-contact">
+          <a href="https://www.sar-osaka.com/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B" class="contact-btn"><i class="fa fa-envelope"></i><br>お問い合わせ<br>はコチラ</a>
+        </div>
+      </header>
+      <main>
+        <div class="signup">
+          <div class="signup-title">新規登録</div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            
+            <div class="field box-email">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+            <div class="field box-password">
+              <%= f.label :password %>
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "new-password" %>
+            </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+            <div class="field box-password">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+            </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+            <div class="actions">
+              <%= f.submit "Sign up", :class=>"btn-color5" %>
+            </div>
+          <% end %>
 
-<%= render "devise/shared/links" %>
+          <div class="login-path">
+            <p><span>------------</span> アカウントをお持ちの方はこちら <span>------------</span></p>
+            <%= link_to "ログイン", new_user_session_path %>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>Copyright © 2020 S・A・R 株式会社 All Rights Reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
