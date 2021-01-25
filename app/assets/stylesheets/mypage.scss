@@ -1,0 +1,57 @@
+.mypage {
+  width: 500px;
+  height: 470px;
+  margin: 60px auto 60px auto;
+  text-align: center; 
+  background-color: #ffffff;
+}
+
+.mypage-title{
+  font-size: 24px;
+  color: #000000;
+  font-family: "ヒラギノ角ゴ Pro W8";
+  font-weight: bold;
+  padding:20px 0px 0px 0px;
+  margin:10px 0px 10px 0px;
+}
+
+.mypage-email {
+  font-weight: 500;
+  font-size: 11px;
+  margin:60px 0px 0px 0px;
+}
+
+.mypage-email-add {
+  font-weight: 700;
+  font-size: 14px;
+  margin:10px 0px 0px 0px;
+}
+
+.mypage-card {
+  font-weight: 500;
+  margin:70px 0px 0px 0px;
+  // background-color: beige;
+}
+
+.mypage-card-title {
+  font-weight: 500;
+  font-size: 11px;
+}
+
+.mypage-card-num {
+  font-weight: 700;
+  font-size: 14px;
+  margin:10px 0px 0px 0px;
+}
+
+.mypage-card-lim {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.mypage-card-lim-num {
+  font-weight: 700;
+  font-size: 14px;
+  display:inline-block;
+  margin:10px 0px 0px 0px;
+}
