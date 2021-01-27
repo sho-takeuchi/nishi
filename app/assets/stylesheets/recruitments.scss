@@ -13,3 +13,94 @@
 #form4{
   display: none;
 }
+
+#submit1 {
+	background: none;
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+  appearance: none;
+  font-weight: 700;
+  color: #fff;
+  margin:-150px 0px 0px 0px;
+  height: 50px;
+  width: 150px;
+}
+
+#submit2 {
+  background: none;
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+  appearance: none;
+  font-weight: 700;
+  color: #fff;
+  margin:-150px 0px 0px 0px;
+  height: 50px;
+  width: 150px;
+}
+
+#form3input {
+  border-style: none;
+  box-sizing: border-box;
+  width: 300px;
+  height: 31px;
+  border: 1px solid #a6a6a6;
+  box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+  border-radius: 3px;
+  padding: 0 7px;
+}
+
+#form3submit {
+  background: none;
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+  appearance: none;
+  font-weight: 700;
+  color: #fff;
+}
+
+.recruitments {
+  width: 500px;
+  height: 300px;
+  margin: 60px auto 60px auto;
+  text-align: center; 
+  background-color: #ffffff;
+}
+
+.recruitments-title{
+  font-size: 24px;
+  color: #000000;
+  font-family: "ヒラギノ角ゴ Pro W8";
+  font-weight: bold;
+  padding:20px 0px 0px 0px;
+  margin:10px 0px 10px 0px;
+}
+
+#questionButton {
+  color: #ffffff;
+  font-weight: 700;
+  margin:-150px 0px 0px 0px;
+  height: 50px;
+  width: 150px;
+}
+
+.wrapper {
+  background-color: #cbf2ee;
+}
+
+.choice {
+  // width: 300px;
+  // float: left;
+  // margin: 0px 0px 0px 0px;
+}
+
+.recruitments-content {
+  font-size: 7px;
+  color: #000000;
+  // font-family: "ヒラギノ角ゴ Pro W6";
+}

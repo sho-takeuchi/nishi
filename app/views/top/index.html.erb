@@ -28,10 +28,12 @@
             <% end %>
             <% if user_signed_in? %>
               <% if @card.nil? %>
-                <strong><%= link_to "サブスク登録へ", new_card_path, class: "btn btn-color3" %></strong>
+                <strong><%= link_to "定期課金登録へ", new_card_path, class: "btn btn-color3" %></strong>
               <% elsif @user.premium == false then %>
                 <%= form_tag(action: :resume, method: :post) do %>
-                  <button>サブスクを再開する</button>
+                  <div class="btn-color3">
+                    <button>定期課金を再開する</button>
+                  </div>
                 <% end %>
               <% end %>
             <% end %>

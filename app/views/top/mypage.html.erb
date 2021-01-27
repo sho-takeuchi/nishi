@@ -1,37 +1,77 @@
-<h1>会員情報</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>西澤式適性診断アプリ</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+  </head>
 
-<p>あなたのemailは、<%= @email_addres %>です</p>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <%= link_to '西澤式適性診断アプリ', root_path, class: "header-logo" %>
+        <div class="content-contact">
+          <a href="https://www.sar-osaka.com/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B" class="contact-btn"><i class="fa fa-envelope"></i><br>お問い合わせ<br>はコチラ</a>
+        </div>
+      </header>
+      <main>
+        <div class="mypage">
+          <div class="mypage-title">登録情報</div>
 
+          <div class="mypage-email">
+            あなたのメールアドレス
+            <div class="mypage-email-add"> 
+              <%= @email_addres %>
+            </div>
+          </div>
 
-<% if !@card.nil? %>
-  <strong>カード情報</strong>
-  <p>カード番号</p>
-  <%= "**** **** **** " + @default_card_information.last4 %>
-  <br>
-  <p>年月日</p>
-  <% exp_month = @default_card_information.exp_month.to_s %>
-  <% exp_year = @default_card_information.exp_year.to_s.slice(2,3) %>
-  <%= exp_month + " / " + exp_year %>
+          <div class="mypage-card">
+            <% if !@card.nil? %>
+              <div class="mypage-card-title">
+                登録中のカード
+              </div>
+              <div class="mypage-card-num">
+                カード番号　　<%= "**** **** **** " + @default_card_information.last4 %><br>
+              </div>
+              <div class="mypage-card-lim">
+                有効期限　　
+                <% exp_month = @default_card_information.exp_month.to_s %>
+                <% exp_year = @default_card_information.exp_year.to_s.slice(2,3) %>
+                <div class="mypage-card-lim-num"><%= exp_month + " / " + exp_year %></div>
+              </div>
+              <% if @user.premium == true %>
+                <%= form_tag(action: :cancel, method: :post) do %>
+                <div class="subscript-cancell-btm">
+                  <button id="subscript_cancell">定期課金を解約する</button>
+                </div>
+                <% end %>
+              <% else %>
+                <p>定期課金会員ではありません。</p>
+                <P>サービスの利用には定期課金会員である必要があります。定期課金を再開しますか？</p>
+                <%= form_tag(action: :resume, method: :post) do %>
+                  <button>定額課金を再開する</button>
+                <% end %>
+              <% end %>
+            <% else %>
+              カード情報がありません。<br>カード情報の入力と定期課金決済の手続きを完了してください。
+            <% end %>
+          </div>
+          
+          <script>
+            $(document).on("ready turbolinks:load", function() {
+              $("#subscript_cancell").on("click" ,function(){
+                alert('本当に解約しますか？');
+              });
+            });
+          </script>
 
-  <% if @user.premium == true %>
-    <%= form_tag(action: :cancel, method: :post) do %>
-      <button id="subscript_cancell">サブスクを解約する</button>
-    <% end %>
-  <% else %>
-    <p>サブスク会員ではありません。</p>
-    <P>サービスの利用にはサブスク会員である必要があります。サブスクを再開しますか？</p>
-    <%= form_tag(action: :resume, method: :post) do %>
-      <button>サブスクを再開する</button>
-    <% end %>
-  <% end %>
-<% else %>
-  カード情報がありません。カード情報の入力とサブスク決済の手続きを完了してください。
-<% end %>
-
-<script>
-  $(document).on("ready turbolinks:load", function() {
-    $("#subscript_cancell").on("click" ,function(){
-      alert('本当に解約しますか？');
-    });
-  });
-</script>
+        </div>
+      </main>
+      <footer>
+        <p>Copyright © 2020 S・A・R 株式会社 All Rights Reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
