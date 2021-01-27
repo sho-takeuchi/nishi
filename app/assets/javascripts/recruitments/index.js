@@ -22,23 +22,23 @@ $(document).on("ready turbolinks:load", function() {
     }
   });
 
-  $("#submit1").click(function() {
+  $("#form1").submit(function() {
     let answer1Prop = $("#answer1").prop('checked');
     let answer2Prop = $("#answer2").prop('checked');
     let answer3Prop = $("#answer3").prop('checked');
     let answer4Prop = $("#answer4").prop('checked');
-
+    
     if(answer1Prop){
       $("#form1").attr('action',$("#answer1").data('action'));
-    }
-    if(answer2Prop){
+    } else if (answer2Prop) {
       $("#form1").attr('action',$("#answer2").data('action'));
-    }
-    if(answer3Prop){
+    } else if (answer3Prop) {
       $("#form1").attr('action',$("#answer3").data('action'));
-    }
-    if(answer4Prop){
+    } else if (answer4Prop) {
       $("#form1").attr('action',$("#answer4").data('action'));
+    } else{
+      alert("選択肢を一つ選んでください");
+      return false;
     }
   });
 
