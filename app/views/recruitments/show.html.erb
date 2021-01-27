@@ -19,7 +19,9 @@
       <main>
         <div class="recruitments">
           <div class="recruitments-title">適性診断</div>
-            <%= @recruitments.name  %>
+            <div class="recruitments-content">
+              <%= @recruitments.name  %>
+            </div>
             <strong><%= link_to "トップページへ", root_path, class: "btn-choice" %></strong>
           </div>
         </div>
