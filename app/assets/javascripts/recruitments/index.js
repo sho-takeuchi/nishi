@@ -42,7 +42,7 @@ $(document).on("ready turbolinks:load", function() {
     }
   });
 
-  $("#submit2").click(function() {
+  $("#form2").submit(function() {
     let answer5Prop = $("#answer5").prop('checked');
     let answer6Prop = $("#answer6").prop('checked');
     let answer7Prop = $("#answer7").prop('checked');
@@ -50,15 +50,15 @@ $(document).on("ready turbolinks:load", function() {
 
     if(answer5Prop){
       $("#form2").attr('action',$("#answer5").data('action'));
-    }
-    if(answer6Prop){
+    } else if (answer6Prop) {
       $("#form2").attr('action',$("#answer6").data('action'));
-    }
-    if(answer7Prop){
+    } else if (answer7Prop) {
       $("#form2").attr('action',$("#answer7").data('action'));
-    }
-    if(answer8Prop){
+    } else if (answer8Prop) {
       $("#form2").attr('action',$("#answer8").data('action'));
+    } else{
+      alert("選択肢を一つ選んでください");
+      return false;
     }
   });
 
