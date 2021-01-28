@@ -66,7 +66,7 @@
 
 .recruitments {
   width: 500px;
-  height: 300px;
+  height: 350px;
   margin: 60px auto 60px auto;
   text-align: center; 
   background-color: #ffffff;
@@ -93,14 +93,31 @@
   background-color: #cbf2ee;
 }
 
-.choice {
-  // width: 300px;
-  // float: left;
-  // margin: 0px 0px 0px 0px;
-}
-
 .recruitments-content {
-  font-size: 7px;
+  margin: 0px auto 0px auto;
+  text-align: left; 
+  width: 400px;
+  font-size: 12px;
   color: #000000;
   // font-family: "ヒラギノ角ゴ Pro W6";
+}
+
+.radio-question1 {
+  text-align: left; 
+  padding: 0px 0px 0px 150px;
+}
+
+.radio-question2 {
+  text-align: left; 
+  padding: 0px 0px 0px 150px;
+}
+
+.radio-question3 {
+  text-align: left; 
+  padding: 0px 0px 0px 150px;
+}
+
+.radio-column {
+  margin: 15px 0px 0px 0px;
+  font-size: 12px;
 }
