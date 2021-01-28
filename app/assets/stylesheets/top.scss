@@ -381,6 +381,10 @@ footer {
     height: 300px;
     margin: 70px auto 40px auto;
   }
+
+  .contents {
+    height: 80px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -406,6 +410,6 @@ footer {
   .content-privacy {
     width: 400px;
     height: 300px;
-    margin: 330px auto 40px auto;
+    margin: 300px auto 40px auto;
   }
 }
