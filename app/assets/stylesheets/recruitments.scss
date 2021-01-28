@@ -121,3 +121,32 @@
   margin: 15px 0px 0px 0px;
   font-size: 12px;
 }
+
+@media (max-width: 520px) {
+  .recruitments {
+    width: 400px;
+    height: 350px;
+  }
+
+  .radio-question1 {
+    text-align: left; 
+    padding: 0px 0px 0px 100px;
+  }
+  
+  .radio-question2 {
+    text-align: left; 
+    padding: 0px 0px 0px 100px;
+  }
+  
+  .radio-question3 {
+    text-align: left; 
+    padding: 0px 0px 0px 100px;
+  }
+
+  .recruitments-content {
+    margin: 0px auto 0px auto;
+    text-align: left; 
+    width: 350px;
+    // font-family: "ヒラギノ角ゴ Pro W6";
+  }
+}
