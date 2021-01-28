@@ -44,6 +44,24 @@ class TopController < ApplicationController
     redirect_to "/"
   end
 
+  def card_delete
+
+    card = Card.where(user_id: current_user.id).first
+    customer = Payjp::Customer.retrieve(card.customer_id)
+    default_card_information = customer.cards.retrieve(card.card_id)
+    subscription = Payjp::Subscription.retrieve(current_user.subscription_id)
+    if default_card_information.delete #削除に成功した時にポップアップを表示します。
+      subscription.delete
+      card.destroy
+      flash[:notice2] = '削除しました'
+      redirect_to action: "index"
+    else #削除に失敗した時にアラートを表示します。
+      flash[:alert2] = '削除できませんでした'
+      redirect_to action: "index"
+    end
+
+  end
+
   private
   def move_to_signed_in
     unless user_signed_in?

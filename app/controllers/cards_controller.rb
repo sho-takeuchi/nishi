@@ -14,7 +14,7 @@ class CardsController < ApplicationController
     )
   end
 
-  def create #カード登録メソッド
+  def create #カード登録アクション
     if params['payjp-token'].blank?
       redirect_to action: "new"
       # トークンが取得出来てなければループ

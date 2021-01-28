@@ -54,6 +54,13 @@
                   <button>定額課金を再開する</button>
                 <% end %>
               <% end %>
+
+                <%= form_tag(action: :card_delete, method: :post) do %>
+                  <div class="subscript-cancell-btm">
+                    <button id="card_delete_id">カード情報を削除する</button>
+                  </div>
+                <% end %>
+
             <% else %>
               カード情報がありません。<br>カード情報の入力と定期課金決済の手続きを完了してください。
             <% end %>
@@ -64,7 +71,12 @@
               $("#subscript_cancell").on("click" ,function(){
                 alert('本当に解約しますか？');
               });
+
+              $("#card_delete_id").on("click" ,function(){
+                alert('カードを削除すると定期課金も解約になります。\n 本当によろしいですか？');
+              });
             });
+
           </script>
 
         </div>
