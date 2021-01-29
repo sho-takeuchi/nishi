@@ -48,8 +48,10 @@
                 </div>
                 <% end %>
               <% else %>
-                <p>定期課金会員ではありません。</p>
-                <P>サービスの利用には定期課金会員である必要があります。定期課金を再開しますか？</p>
+                <div class="subscript-cancell-ex">
+                  定期課金会員ではありません。<br>
+                  サービスの利用には定期課金会員である必要があります。<br>定期課金を再開しますか？
+                <div>
                 <%= form_tag(action: :resume, method: :post) do %>
                   <button>定額課金を再開する</button>
                 <% end %>
@@ -62,7 +64,9 @@
                 <% end %>
 
             <% else %>
+            <div class="subscript-cancell-ex">
               カード情報がありません。<br>カード情報の入力と定期課金決済の手続きを完了してください。
+            </div>
             <% end %>
           </div>
           

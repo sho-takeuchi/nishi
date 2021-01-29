@@ -14,10 +14,14 @@
 
   <body>
     <% if flash[:notice] %>
-      <p><%= flash[:notice] %></p>
+      <div class="notice-column">
+        <%= flash[:notice] %>
+      </div>
     <% end %>
     <% if flash[:alert] %>
-      <p><%= flash[:alert] %></p>
+      <div class="alert-column">
+        <%= flash[:alert] %>
+      </div>
     <% end %>
 
     <%= yield %>

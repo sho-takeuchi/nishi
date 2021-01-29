@@ -1,12 +1,41 @@
-<p>クレジットード情報入力</p>
-<%= form_with model: @card, url: cards_path, local: true, html: { name: 'inputForm' } do |f| %>
-  <p>カード番号</p>
-  <%= f.text_field :card_number, id: "card_number",class: "card_form",maxlength: '16' %>
-  <p>有効期限</p>
-  <%= f.collection_select :exp_month , Month.all, :id, :name , {},class: "card-check-box",id: "exp_month" %>
-  <%= f.collection_select :exp_year, Year.all, :id, :name, {}, class: "card-check-box",id: "exp_year"  %>
-  <p>セキュリティコード</p>
-  <%= f.password_field :cvc, id: 'cvc',class: "card_form" ,maxlength: '6',autocomplete: "on" %>
-  <div class="card-btn" id="card_token"></div>
-  <%= f.submit 'サブスク決済をする', id: 'token_submit',class: 'card-btn' %>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>西澤式適性診断アプリ</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <%= link_to '西澤式適性診断アプリ', root_path, class: "header-logo" %>
+        <div class="content-contact">
+          <a href="https://www.sar-osaka.com/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B" class="contact-btn"><i class="fa fa-envelope"></i><br>お問い合わせ<br>はコチラ</a>
+        </div>
+      </header>
+      <main>
+        <div class="card">
+          <div class="card-title">クレジットード情報入力</div>
+          <div class="card-column">※VISA、Mastercardのみ</div>
+          <%= form_with model: @card, url: cards_path, local: true, html: { name: 'inputForm' } do |f| %>
+            <div class="card-num">カード番号</div>
+            <%= f.text_field :card_number, id: "card_number",class: "card_form1",maxlength: '16' %>
+            <div class="card-lim">有効期限</div>
+            <%= f.collection_select :exp_month , Month.all, :id, :name , {},class: "card-check-box",id: "exp_month" %>
+            <%= f.collection_select :exp_year, Year.all, :id, :name, {}, class: "card-check-box",id: "exp_year"  %>
+            <div class="card-cord">セキュリティコード</div>
+            <%= f.password_field :cvc, id: 'cvc',class: "card_form2" ,maxlength: '6',autocomplete: "on" %>
+            <div class="card-btn-column" id="card_token"></div>
+            <%= f.submit '定期課金を決済をする', id: 'token_submit',class: 'card-btn' %>
+          <% end %>
+        </div>
+      </main>
+      <footer>
+        <p>Copyright © 2020 S・A・R 株式会社 All Rights Reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

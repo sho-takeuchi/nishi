@@ -29,7 +29,7 @@ class RecruitmentsController < ApplicationController
     end
     user = User.where(id: current_user.id).first
     unless user.premium?
-      flash[:notice] = 'サービスの利用には定期課金決済が必要です。サブスクを再開してください。'
+      flash[:notice] = 'サービスの利用には定期課金決済が必要です。定期課金を再開してください。'
       redirect_to "/"
     end
   end
