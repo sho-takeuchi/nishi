@@ -31,7 +31,7 @@
                 <strong><%= link_to "定期課金登録へ", new_card_path, class: "btn btn-color3" %></strong>
               <% elsif @user.premium == false then %>
                 <%= form_tag(action: :resume, method: :post) do %>
-                  <div class="btn-color3">
+                  <div class="btn-color7">
                     <button>定期課金を再開する</button>
                   </div>
                 <% end %>

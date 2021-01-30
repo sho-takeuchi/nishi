@@ -34,7 +34,7 @@
                 <label><input type="radio" id="question4" name="question" value="4" >逃げる</label><br>
               </div>
             </div>
-            <div class="btn-choice">
+            <div class="btn-choice1">
               <button type="button" id="questionButton">次へ</button>
             </div>
           </form>
@@ -55,7 +55,7 @@
                 <label><input type="radio" id="answer4" name="answer" data-action="show/4">竹槍みたいな入手し易い武器</label><br>
               </div>
             </div>
-            <div class="btn-choice">
+            <div class="btn-choice1">
               <input type="submit" value="診断する" id="submit1">
             </div>
           </form>
@@ -76,7 +76,7 @@
                 <label><input type="radio" id="answer8" name="answer" data-action="show/8">自ら先人を切って引っ張る</label><br>
               </div>
             </div>
-            <div class="btn-choice">
+            <div class="btn-choice1">
               <input type="submit" value="診断する" id="submit2">
             </div>
           </form>
@@ -87,27 +87,29 @@
           <div id="form3">
             <label>どのように土地を活かす？</label>
             <p>
-              <input type="text" id="form3input" placeholder="回答を入力してください"> 
+              <textarea type="text" id="form3input" placeholder="回答を入力してください"></textarea>
             </p>
-            <div class="btn-choice">
+            <div class="btn-choice2">
               <input type="button" value="診断する" id="form3submit">
             </div>
           </div>
 
           <%# ここは普段はdisplay="none" %>
           <div id="form3_answer">
-            <label>あなたの回答:</label>
-            <label id="answerText"></label>
-              <label>回答にまでかかった時間は</label>
-              <label id="answerTime"></label>
-              <label>秒</label><br>
-            <strong><%= link_to "トップページへ", root_path, class: "btn-choice" %></strong>
+            <label>あなたの回答:<br></label>
+            <div class="answerText">
+              <label id="answerText"></label>
+            </div>
+            <label><br>回答にまでかかった時間は</label>
+            <label id="answerTime"></label>
+            <label>秒</label><br>
+            <strong><%= link_to "トップページへ", root_path, class: "btn-choice1" %></strong>
           </div>
 
           <%# ここは普段はdisplay="none" %>
           <div id="form4">
             <p>追加質問なし。ありがとうございました。</p>
-            <strong><%= link_to "トップページへ", root_path, class: "btn-choice" %></strong>
+            <strong><%= link_to "トップページへ", root_path, class: "btn-choice1" %></strong>
           </div>
         </div>
       </main>
