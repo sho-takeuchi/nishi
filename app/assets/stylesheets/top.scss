@@ -320,6 +320,76 @@ button {
 }
 
 
+.btn-color7 {
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  height: 100px;
+  width: 150px;
+  font-family: "ヒラギノ角ゴ Pro W6";
+  transition: 0.3s;
+  outline: none;
+  border: none;
+  letter-spacing: 0.1em;
+  border-radius: 0.5rem;
+  font-size: 16px;
+  text-align: center;
+  margin:0px 0px 0px 0px;
+  color: #FFFFFF;
+  background-color: #b2e85c;
+  border-bottom: 5px solid #8fc33a;
+  padding: 25px 0px 0px 0px;
+}
+
+.btn-color7:hover {
+  margin-top: 2px;
+  color: #FFFFFF;
+  background-color: #b2e85c;
+  border-bottom: 2px solid #8fc33a;
+}
+
+.card-btn {
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  height: 50px;
+  width: 200px;
+  color: #fff;
+  background: #eb6877;
+  -webkit-box-shadow: 0 7px 0 #e53b4e;
+  box-shadow: 0 7px 0 #e53b4e;
+  font-family: "ヒラギノ角ゴ Pro W6";
+  transition: 0.3s;
+  outline: none;
+  border: none;
+  letter-spacing: 0.1em;
+  border-radius: 0.5rem;
+  font-size: 12px;
+  text-align: center;
+  margin:0px 0px 20px 0px;
+}
+
+.card-btn:hover {
+  -webkit-transform: translate(0, 4px);
+  transform: translate(0, 4px);
+  color: #fff;
+  -webkit-box-shadow: 0 3px 0 #e53b4e;
+  box-shadow: 0 3px 0 #e53b4e;
+}
 
 // ----------- お問い合わせ ---------------
 .content-contact {
