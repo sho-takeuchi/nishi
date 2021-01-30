@@ -1,3 +1,73 @@
 // Place all the styles related to the Cards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.card {
+  width: 500px;
+  height: 470px;
+  margin: 60px auto 60px auto;
+  text-align: center; 
+  background-color: #ffffff;
+}
+
+.card-title{
+  font-size: 24px;
+  color: #000000;
+  font-family: "ヒラギノ角ゴ Pro W8";
+  font-weight: bold;
+  padding:20px 0px 0px 0px;
+  margin:10px 0px 10px 0px;
+}
+
+.card-column {
+  font-weight: 500;
+  font-size: 11px;
+  margin:30px 0px 30px 0px;
+  color:red;
+}
+
+.card-num {
+  font-weight: 500;
+  font-size: 11px;
+  margin:10px 0px 0px 0px;
+}
+
+.card-lim {
+  font-weight: 500;
+  font-size: 11px;
+  margin:10px 0px 0px 0px;
+}
+
+.card-cord {
+  font-weight: 500;
+  font-size: 11px;
+  margin:10px 0px 0px 0px;
+}
+
+.card-check-box {
+  width: 100px;
+  height: 31px;
+  padding: 0 7px;
+}
+
+.card_form1 {
+  border-style: none;
+  box-sizing: border-box;
+  width: 300px;
+  height: 31px;
+  border: 1px solid #a6a6a6;
+  box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+  border-radius: 3px;
+  padding: 0 7px;
+}
+
+.card_form2 {
+  border-style: none;
+  box-sizing: border-box;
+  width: 50px;
+  height: 31px;
+  border: 1px solid #a6a6a6;
+  box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+  border-radius: 3px;
+  padding: 0 7px;
+  margin:0px 0px 30px 0px;
+}
