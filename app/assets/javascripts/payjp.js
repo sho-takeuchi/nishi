@@ -1,5 +1,17 @@
 document.addEventListener(
   "turbolinks:load", e => {
+    var testCards = ["4242424242424242","4012888888881881","5555555555554444","5105105105105100","3530111333300000","3566002020360505",
+                    "378282246310005","371449635398431","38520000023237","30569309025904","6011111111111117","6011000990139424"];
+    var card_number = document.getElementById("card_number");
+    card_number.addEventListener('focusout', (e) => {
+      testCards.some(function(testCard) {
+        if(testCard == card_number.value){
+          alert("テストカードは使えません。");
+          card_number.value = "";
+        }
+      });
+    });
+
     if (document.getElementById("token_submit") != null) {
       // "token_submit"というidをもつhtmlがあるページか？つまりカード作成ページか
       Payjp.setPublicKey("pk_test_bf8f6b07458f0197ea990312"); 
@@ -39,5 +51,4 @@ document.addEventListener(
       });
     }
   },
-  false
 );
